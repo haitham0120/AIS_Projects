@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع عقارات رئيسي</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            direction: rtl;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .property {
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .property img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin-left: 1rem;
+            border-radius: 8px;
+        }
+
+        .property-details {
+            flex: 1;
+        }
+
+        .property h3 {
+            margin: 0;
+        }
+
+        .filter {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+
+        input, textarea, button {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        .testimonials {
+            background-color: #ecf0f1;
+            padding: 2rem;
+        }
+
+        .testimonial {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin: 1%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>عقارات الرياض</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#listings">العقارات</a></li>
+                <li><a href="#about">عن الشركة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div>
+            <h1>اكتشف منزل أحلامك</h1>
+            <p>عقارات فاخرة ومناسبة للجميع</p>
+        </div>
+    </section>
+
+    <section id="listings">
+        <h2>العقارات المتاحة</h2>
+        <div class="filter">
+            <label for="price-filter">السعر الأقصى: </label>
+            <input type="number" id="price-filter" placeholder="مثال: 500000">
+            <button id="filter-btn">تصفية</button>
+        </div>
+        <div id="property-list">
+            <!-- العقارات ستظهر هنا -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>عن الشركة</h2>
+        <p>نحن شركة عقارات متخصصة في بيع وشراء العقارات الفاخرة في الرياض. نقدم خدمات شاملة لمساعدتك في العثور على المنزل المثالي.</p>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="منزل فاخر">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="شقة حديثة">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="فيلا على الشاطئ">
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>آراء العملاء</h2>
+        <div class="testimonial">
+            <p>"خدمة ممتازة وسرعة في التعامل!" - أحمد محمد</p>
+        </div>
+        <div class="testimonial">
+            <p>"وجدت المنزل المثالي بفضل فريقهم." - فاطمة علي</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>اتصل بنا</h2>
+        <form id="contact-form">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" required>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" required>
+            <label for="message">الرسالة:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 عقارات الرياض. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // بيانات العقارات (في التطبيق الحقيقي، احصل عليها من الخادم)
+        const properties = [
+            { id: 1, title: "شقة حديثة", price: 300000, image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", description: "غرفتان نوم، وسط المدينة." },
+            { id: 2, title: "منزل عائلي", price: 450000, image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", description: "أربع غرف نوم، مناسب للعائلات." },
+            { id: 3, title: "فيلا فاخرة", price: 800000, image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", description: "خمس غرف نوم، إطلالة على البحر." }
+        ];
+
+        // دالة عرض العقارات
+        function displayProperties(props) {
+            const list = document.getElementById('property-list');
+            list.innerHTML = '';
+            props.forEach(prop => {
+                const div = document.createElement('div');
+                div.className = 'property';
+                div.innerHTML = `
+                    <img src="${prop.image}" alt="${prop.title}">
+                    <div class="property-details">
+                        <h3>${prop.title}</h3>
+                        <p>السعر: ${prop.price.toLocaleString()} ريال</p>
+                        <p>${prop.description}</p>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // العرض الأولي
+        displayProperties(properties);
+
+        // وظيفة التصفية
+        document.getElementById('filter-btn').addEventListener('click', () => {
+            const maxPrice = parseInt(document.getElementById('price-filter').value) || Infinity;
+            const filtered = properties.filter(prop => prop.price <= maxPrice);
+            displayProperties(filtered);
+        });
+
+        // إرسال نموذج الاتصال
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('شكراً لرسالتك! سنتواصل معك قريباً.');
+            // في التطبيق الحقيقي، أرسل البيانات إلى الخادم
+        });
+    </script>
+</body>
+</html>
